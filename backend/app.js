@@ -60,4 +60,13 @@ app.use('/api/clientes', (req, res, next) => {
   });
 });
 
+app.get('/api/clientes', (req, res, next) => {
+  Cliente.find().then(documents => {
+  res.status(200).json({
+  mensagem: "Tudo OK",
+  clientes: documents
+  });
+  })
+ });
+
 module.exports = app;
