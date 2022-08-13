@@ -70,4 +70,10 @@ app.get('/api/clientes', (req, res, next) => {
   })
  });
 
+ app.delete ('/api/clientes/:id', (req, res, next) => {
+  console.log (req.params);
+  res.status(200).end();
+ });
+ 
+
 module.exports = app;
