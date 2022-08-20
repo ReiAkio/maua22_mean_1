@@ -1,5 +1,6 @@
 <mat-card>
-  <form (submit)="onSalvarCliente(clienteForm)" #clienteForm="ngForm">
+  <mat-spinner *ngIf="estaCarregando"></mat-spinner>
+  <form (submit)="onSalvarCliente(clienteForm)" *ngIf="!estaCarregando" #clienteForm="ngForm">
     <mat-form-field>
       <input type="text" required minlength="4" matInput placeholder="nome" name="nome" [ngModel]="cliente?.nome" #nome="ngModel"/>
       <mat-error *ngIf="nome.invalid">Digite um nome válido.</mat-error>

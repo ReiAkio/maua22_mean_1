@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const clienteRoutes = require ('./rotas/clientes');
+
 const mongoose = require('mongoose');
 const Cliente = require('./models/cliente');
 
@@ -29,6 +31,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,PUT,OPTIONS');
   next();
 })
+
+app.use ('/api/clientes', clienteRoutes);
 
 app.post ('/api/clientes', (req, res, next) => {
   const cliente = new Cliente({
