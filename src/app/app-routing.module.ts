@@ -5,7 +5,8 @@ import { ClienteInserirComponent } from './clientes/cliente-inserir.component';
 
 const routes: Routes = [
     { path: '', component: ClienteListaComponent },
-    {path: 'criar', component: ClienteInserirComponent}
+    {path: 'criar', component: ClienteInserirComponent},
+    {path: 'editar/:idCliente', component: ClienteInserirComponent}
 ];
 
 @NgModule({
